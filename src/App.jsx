@@ -1,33 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section>
+        <h2>Form in React</h2>
+      </section>
+      <section>
+        <div></div><span>First Name</span><input />
+        <div><span>Last Name</span><input /></div>
+        <div><span>Enter Email</span><input /></div>
+        <div><span>Contact</span><input /></div>
+        <div>Gender*<input type='radio' checked />Male<input type='radio' />Female<input type='radio' />Others</div>
+        <div>Your best Subject<input type='checkbox' checked />English<input type='checkbox' />Maths<input type='checkbox' />Physics</div>
+        <div>upload Resume<input type='file' /></div>
+        <div>Enter URL*<input /></div>
+        <div>Select your choice<select></select></div>
+        <div>About<textarea placeholder='about your self' /></div>
+      </section>
+      <section>
+        <span>Submit or reset</span>
+        <div>
+          <button>Reset</button>
+          <button>Submit</button>
+        </div>
+      </section>
     </>
   )
 }
