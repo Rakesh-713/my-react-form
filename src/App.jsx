@@ -1,14 +1,27 @@
-import './App.css'
-import { useState } from 'react'
+import "./App.css";
+import { useState } from "react";
 const initialState = {
-  firstName: '', lastName: '', email: '', contact: '', gender: '', subject: '', url: '', choice: '', about: ''
-}
+  firstName: "",
+  lastName: "",
+  email: "",
+  contact: "",
+  gender: "Male",
+  subject: "English",
+  url: "",
+  choice: "",
+  about: "",
+};
 function App() {
-
   const [data, setData] = useState(initialState);
 
-  const handleSubmit = () => { setData(initialState) }
-  const handleReset = () => { setData(initialState) }
+  const handleSubmit = () => {
+    // setData(initialState);
+    console.log(data, "submit data");
+  };
+  const handleReset = () => {
+    setData(initialState);
+    console.log(data, "reset data");
+  };
 
   return (
     <>
@@ -17,20 +30,90 @@ function App() {
       </section>
       <section>
         <form>
-          <div><span>First Name</span><input type="text" onChange={(e) => setData({ ...data, firstName: e.target.value })} value={data.firstName} /></div>
-          <div><span>Last Name</span><input type="text" onChange={(e) => setData({ ...data, lastName: e.target.value })} value={data.lastName} /></div>
-          <div><span>Enter Email</span><input type="email" onChange={(e) => setData({ ...data, email: e.target.value })} value={data.email} /></div>
-          <div><span>Contact</span><input type="text" onChange={(e) => setData({ ...data, contact: e.target.value })} value={data.contact} /></div>
-          <div>Gender*<input type='radio' checked />Male<input type='radio' />Female<input type='radio' />Others</div>
-          <div>Your best Subject<input type='checkbox' checked />English<input type='checkbox' />Maths<input type='checkbox' />Physics</div>
-          <div>upload Resume<input type='file' /></div>
-          <div>Enter URL*<input type="text" onChange={(e) => setData({ ...data, url: e.target.value })} value={data.url} /></div>
-          <div>Select your choice<select>
-            <option value="option1">Option 1 Text</option>
-            <option value="option2">Option 2 Text</option>
-            <option value="option3">Option 3 Text</option></select>
+          <div>
+            <span>First Name</span>
+            <input
+              type="text"
+              onChange={(e) => setData({ ...data, firstName: e.target.value })}
+              value={data.firstName}
+              placeholder="Enter First Name"
+            />
           </div>
-          <div>About<textarea placeholder='about your self' type="text" onChange={(e) => setData({ ...data, about: e.target.value })} value={data.about} /></div>
+          <div>
+            <span>Last Name</span>
+            <input
+              type="text"
+              onChange={(e) => setData({ ...data, lastName: e.target.value })}
+              value={data.lastName}
+              placeholder="Enter Last Name"
+            />
+          </div>
+          <div>
+            <span>Enter Email</span>
+            <input
+              type="email"
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+              value={data.email}
+              placeholder="Enter Email"
+            />
+          </div>
+          <div>
+            <span>Contact</span>
+            <input
+              type="text"
+              onChange={(e) => setData({ ...data, contact: e.target.value })}
+              value={data.contact}
+              placeholder="Enter mobile number"
+            />
+          </div>
+          <div onChange={(e) => setData({ ...data, gender: e.target.value })}>
+            Gender*
+            <input type="radio" value="Male" />
+            Male
+            <input type="radio" value="Female" />
+            Female
+            <input type="radio" value="Others" />
+            Others
+          </div>
+          <div onChange={(e) => setData({ ...data, subject: e.target.value })}>
+            Your best Subject
+            <input type="checkbox" value="English" />
+            English
+            <input type="checkbox" value="Maths" />
+            Maths
+            <input type="checkbox" value="Physics" />
+            Physics
+          </div>
+          <div>
+            upload Resume
+            <input type="file" />
+          </div>
+          <div>
+            Enter URL*
+            <input
+              type="text"
+              onChange={(e) => setData({ ...data, url: e.target.value })}
+              value={data.url}
+              placeholder="Enter url"
+            />
+          </div>
+          <div onChange={(e) => setData({ ...data, choice: e.target.value })}>
+            Select your choice
+            <select>
+              <option value="option1">Option 1 Text</option>
+              <option value="option2">Option 2 Text</option>
+              <option value="option3">Option 3 Text</option>
+            </select>
+          </div>
+          <div>
+            About
+            <textarea
+              placeholder="about your self"
+              type="text"
+              onChange={(e) => setData({ ...data, about: e.target.value })}
+              value={data.about}
+            />
+          </div>
         </form>
       </section>
       <section>
@@ -41,7 +124,7 @@ function App() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
